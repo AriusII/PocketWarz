@@ -1,7 +1,5 @@
 @using Microsoft.AspNetCore.Components.Authorization
 @rendermode InteractiveServer
-@inject IJSRuntime Js
-@inject NavigationManager Navigation
 
 <CascadingAuthenticationState>
     <AuthorizeView>
@@ -51,7 +49,7 @@
                                         <hr class="dropdown-divider">
                                     </li>
                                     <li>
-                                        <button class="dropdown-item" @onclick="LogoutAsync">
+                                        <button class="dropdown-item">
                                             <span class="me-2">🚪</span> Logout
                                         </button>
                                     </li>
@@ -101,13 +99,3 @@
         </NotAuthorized>
     </AuthorizeView>
 </CascadingAuthenticationState>
-
-@code {
-
-    private async Task LogoutAsync()
-    {
-        await Js.InvokeVoidAsync("pwAuth.logout");
-        Navigation.NavigateTo("/", true);
-    }
-
-}
