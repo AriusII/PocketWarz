@@ -1,0 +1,123 @@
+/* PocketWarz TopBar Custom Styles */
+
+.pocketwarz-navbar {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
+    border-bottom: 2px solid #f4c430;
+    box-shadow: 0 2px 20px rgba(244, 196, 48, 0.2);
+}
+
+.brand-icon {
+    font-size: 1.8rem;
+    animation: bounce 2s infinite;
+}
+
+.brand-text {
+    font-size: 1.4rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #f4c430, #ffd700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav-icon {
+    margin-right: 4px;
+}
+
+.nav-link {
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    margin: 0 4px;
+}
+
+.nav-link:hover {
+    background: rgba(244, 196, 48, 0.1);
+    transform: translateY(-2px);
+}
+
+.nav-link.active {
+    background: rgba(244, 196, 48, 0.2);
+    color: #f4c430 !important;
+}
+
+/* User Avatar */
+.user-avatar {
+    font-size: 1.4rem;
+}
+
+.user-name {
+    color: #f4c430;
+    font-weight: 500;
+}
+
+/* Currency Badges */
+.currency-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.currency-badge.paws {
+    background: linear-gradient(135deg, #4a90d9, #357abd);
+    color: white;
+}
+
+.currency-badge.golden-paws {
+    background: linear-gradient(135deg, #f4c430, #d4a420);
+    color: #1a1a2e;
+}
+
+.currency-icon {
+    margin-right: 4px;
+}
+
+/* Dropdown Menu */
+.dropdown-menu-dark {
+    background: #1a1a2e;
+    border: 1px solid rgba(244, 196, 48, 0.3);
+}
+
+.dropdown-item:hover {
+    background: rgba(244, 196, 48, 0.1);
+}
+
+/* Register Button */
+.btn-warning {
+    background: linear-gradient(135deg, #f4c430, #ffd700);
+    border: none;
+    color: #1a1a2e !important;
+    transition: all 0.3s ease;
+}
+
+.btn-warning:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(244, 196, 48, 0.4);
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-5px);
+    }
+    60% {
+        transform: translateY(-3px);
+    }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 991.98px) {
+    .currency-badge {
+        margin-top: 10px;
+    }
+
+    .navbar-nav {
+        padding: 10px 0;
+    }
+}
+

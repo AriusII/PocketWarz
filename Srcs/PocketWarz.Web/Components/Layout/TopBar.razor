@@ -1,0 +1,111 @@
+@using Microsoft.AspNetCore.Components.Authorization
+@rendermode InteractiveServer
+@inject IJSRuntime Js
+@inject NavigationManager Navigation
+
+<CascadingAuthenticationState>
+    <AuthorizeView>
+        <Authorized>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top pocketwarz-navbar">
+                <div class="container-fluid">
+                    <!-- Logo / Brand -->
+                    <NavLink class="navbar-brand d-flex align-items-center" href="/">
+                        <span class="brand-icon me-2">🐱</span>
+                        <span class="brand-text">PocketWarz</span>
+                    </NavLink>
+
+                    <!-- Mobile Toggle -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <!-- Navigation Links -->
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <NavLink class="nav-link" href="/" Match="NavLinkMatch.All">
+                                    <span class="nav-icon">🏠</span> Home
+                                </NavLink>
+                            </li>
+                            <li class="nav-item">
+                                <NavLink class="nav-link" href="/game">
+                                    <span class="nav-icon">⚔️</span> Battle
+                                </NavLink>
+                            </li>
+                        </ul>
+
+                        <!-- User Section -->
+                        <ul class="navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button"
+                                   data-bs-toggle="dropdown">
+                                    <span class="user-avatar me-2">
+                                        @(context.User.FindFirst("Faction")?.Value == "Cats" ? "🐱" : "🐕")
+                                    </span>
+                                    <span class="user-name">@context.User.Identity?.Name</span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
+                                    <li><a class="dropdown-item" href="#"><span class="me-2">👤</span> Profile</a></li>
+                                    <li><a class="dropdown-item" href="#"><span class="me-2">⚙️</span> Settings</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li>
+                                        <button class="dropdown-item" @onclick="LogoutAsync">
+                                            <span class="me-2">🚪</span> Logout
+                                        </button>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </Authorized>
+        <NotAuthorized>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top pocketwarz-navbar">
+                <div class="container-fluid">
+                    <!-- Logo / Brand -->
+                    <NavLink class="navbar-brand d-flex align-items-center" href="/">
+                        <span class="brand-icon me-2">🐱</span>
+                        <span class="brand-text">PocketWarz</span>
+                    </NavLink>
+
+                    <!-- Mobile Toggle -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <!-- Navigation Links -->
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <NavLink class="nav-link" href="/" Match="NavLinkMatch.All">
+                                    <span class="nav-icon">🏠</span> Home
+                                </NavLink>
+                            </li>
+                        </ul>
+
+                        <!-- Right Side - Auth Section -->
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <NavLink class="nav-link" href="/login">Login</NavLink>
+                            </li>
+                            <li class="nav-item">
+                                <NavLink class="nav-link" href="/register">Register</NavLink>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </NotAuthorized>
+    </AuthorizeView>
+</CascadingAuthenticationState>
+
+@code {
+    private async Task LogoutAsync()
+    {
+        await Js.InvokeVoidAsync("pwAuth.logout");
+        Navigation.NavigateTo("/", forceLoad: true);
+    }
+}

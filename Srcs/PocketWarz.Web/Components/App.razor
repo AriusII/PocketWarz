@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <base href="/"/>
+
+    <title>PocketWarz - Choose Your Pack!</title>
+    <meta name="description"
+          content="The ultimate battle between Cats and Dogs! Choose your pack, train your warriors, and conquer the arena!"/>
+
+    <ResourcePreloader/>
+
+    <!-- DNS Prefetch et Preconnect pour de meilleures performances -->
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com"/>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet"/>
+
+    <!-- Bootstrap 5.3.8 CSS with SRI -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css"
+          rel="stylesheet"
+          crossorigin="anonymous"
+          fetchpriority="high"/>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+          rel="stylesheet"
+          crossorigin="anonymous"/>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+          rel="stylesheet"
+          crossorigin="anonymous"/>
+
+    <link rel="stylesheet" href="@Assets["app.css"]"/>
+    <link rel="stylesheet" href="@Assets["PocketWarz.Web.styles.css"]"/>
+    <ImportMap/>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png"/>
+
+    <HeadOutlet/>
+</head>
+
+<body>
+<Routes/>
+<ReconnectModal/>
+
+<!-- Phaser 3.90.0 CDN with defer -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.90.0/phaser.min.js"
+        defer
+        crossorigin="anonymous"></script>
+
+<!-- Bootstrap 5.3.8 JS Bundle with defer -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.bundle.min.js"
+        defer
+        crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+        defer
+        crossorigin="anonymous"></script>
+
+<script src="@Assets["js/auth.js"]" defer></script>
+<script src="@Assets["js/game.js"]" defer></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        if (window.AOS) {
+            window.AOS.init({ duration: 700, once: true, offset: 80 });
+        }
+    });
+</script>
+
+<!-- Blazor WebAssembly JS -->
+<script src="@Assets["_framework/blazor.web.js"]"></script>
+</body>
+
+</html>
