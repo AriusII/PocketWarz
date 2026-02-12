@@ -2,6 +2,7 @@
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["Srcs/PocketWarz.Web/PocketWarz.Web.csproj", "Srcs/PocketWarz.Web/"]
+COPY ["Libs/PocketWarz.Core/PocketWarz.Core.csproj", "Libs/PocketWarz.Core/"]
 RUN dotnet restore "Srcs/PocketWarz.Web/PocketWarz.Web.csproj"
 COPY . .
 WORKDIR "/src/Srcs/PocketWarz.Web"
