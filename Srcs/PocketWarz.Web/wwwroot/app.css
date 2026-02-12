@@ -216,7 +216,7 @@ h1:focus {
 .hero-particles {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 60%);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, transparent 60%);
     opacity: 0.35;
     pointer-events: none;
 }
