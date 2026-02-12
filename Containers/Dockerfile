@@ -12,6 +12,7 @@ ARG BUILD_CONFIGURATION=Release
 RUN dotnet publish "./PocketWarz.Web.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS base
+ARG APP_UID=1000
 USER $APP_UID
 WORKDIR /app
 EXPOSE 5000
