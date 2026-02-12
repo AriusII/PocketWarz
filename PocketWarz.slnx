@@ -1,0 +1,13 @@
+﻿<Solution>
+	<Folder Name="/Containers/"/>
+	<Folder Name="/Database/">
+		<Project Path="Database/PocketWarz.Database/PocketWarz.Database.sqlproj"
+		         Type="42ea0dbd-9cf1-443e-919e-be9c484e4577"/>
+	</Folder>
+	<Folder Name="/Libs/">
+		<Project Path="Libs/PocketWarz.Core/PocketWarz.Core.csproj"/>
+	</Folder>
+	<Folder Name="/Srcs/">
+		<Project Path="Srcs/PocketWarz.Web/PocketWarz.Web.csproj"/>
+	</Folder>
+</Solution>
