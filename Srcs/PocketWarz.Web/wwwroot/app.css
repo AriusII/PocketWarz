@@ -268,38 +268,8 @@ h1:focus {
     font-weight: 700;
 }
 
-.team-card {
-    position: relative;
-    background: rgba(13, 18, 33, 0.85);
-    border-radius: 20px;
-    padding: 28px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.team-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
-}
-
-.team-glow {
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at top, rgba(255, 122, 217, 0.18), transparent 60%);
-    opacity: 0;
-    transition: opacity 0.25s ease;
-    border-radius: 20px;
-}
-
-.team-card:hover .team-glow {
-    opacity: 1;
-}
-
-.team-content {
-    position: relative;
-    z-index: 1;
-}
-
+/* Note: Home-page specific card styles are defined in Home.razor.css
+   to avoid duplication and conflicting behavior with component-scoped CSS. */
 .team-mascot {
     font-size: 3rem;
 }
