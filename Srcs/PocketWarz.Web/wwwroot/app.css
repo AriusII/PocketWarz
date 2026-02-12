@@ -363,33 +363,3 @@ h1:focus {
     margin-bottom: 12px;
 }
 
-.cta-section {
-    padding: 80px 0 110px;
-}
-
-.cta-card {
-    background: linear-gradient(135deg, rgba(124, 131, 255, 0.25), rgba(255, 122, 217, 0.2));
-    border-radius: 24px;
-    padding: 40px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.cta-title {
-    font-weight: 700;
-}
-
-.cta-subtitle {
-    color: rgba(255, 255, 255, 0.75);
-}
-
-.cta-actions .btn {
-    border-radius: 999px;
-    font-weight: 600;
-    padding: 12px 24px;
-}
-
-.footer-decoration {
-    padding: 24px 0 40px;
-    text-align: center;
-    color: rgba(255, 255, 255, 0.5);
-}
