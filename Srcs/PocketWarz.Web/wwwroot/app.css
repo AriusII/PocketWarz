@@ -82,21 +82,6 @@ h1:focus {
     text-align: start;
 }
 
-.pocketwarz-navbar {
-    background: rgba(10, 14, 26, 0.85) !important;
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.pocketwarz-navbar .nav-link {
-    color: rgba(255, 255, 255, 0.75);
-    font-weight: 500;
-}
-
-.pocketwarz-navbar .nav-link.active {
-    color: #fff;
-}
-
 .layout-shell {
     min-height: 100vh;
 }
